@@ -65,6 +65,14 @@ var homepage = new Vue({
         });
         },
     },
+    watch: {
+        selectedUser: function(newUserId, oldUserId) {
+            this.user_id = newUserId;
+            if (this.showForm) {
+                this.getChatHistory();
+            }
+        }
+    },
     mounted: function () {
         fetch('/allUsers')
             .then(response => response.json())
