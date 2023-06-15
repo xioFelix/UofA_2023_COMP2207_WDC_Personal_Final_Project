@@ -90,7 +90,7 @@ LIMIT 10;
 
 
 CREATE TABLE `Messages` (
-  `message_id` int NOT NULL AUTO_INCREMENT,
+  `message_id` int NOT NULL AUTO_INCREMENT UNIQUE,
   `user_id` int NOT NULL,
   `seller_id` int NOT NULL,
   `message` varchar(255) NOT NULL,
