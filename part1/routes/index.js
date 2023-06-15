@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/result', function (req, res) {
+router.get('/products', function (req, res) {
   //Connect to the database
   req.pool.getConnection(function (err, connection) {
     if (err) {
@@ -16,4 +16,5 @@ router.get('/result', function (req, res) {
     }
   });
 });
+
 module.exports = router;
