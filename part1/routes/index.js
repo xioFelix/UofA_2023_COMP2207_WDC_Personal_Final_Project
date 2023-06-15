@@ -156,5 +156,4 @@ router.post('/getSellerChatHistory', function (req, res, next) {
   });
 });
 
-
 module.exports = router;
