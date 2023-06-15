@@ -23,8 +23,8 @@ var homepage = new Vue({
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    user_id1: this.user_id,
-                    user_id2: this.seller_id,
+                    user_id: this.user_id,
+                    seller_id: this.seller_id,
                 }),
             })
             .then(response => response.json())
