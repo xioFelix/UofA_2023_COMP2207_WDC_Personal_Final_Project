@@ -5,11 +5,11 @@ var homepage = new Vue({
     },
     mounted: function () {
         fetch('/allBooks')
-            .then(response => response.json())
-            .then(data => {
+            .then((response) => response.json())
+            .then((data) => {
                 this.products = data;
             })
-            .catch(err => {
+            .catch((err) => {
                 console.error('Error:', err);
             });
     }
