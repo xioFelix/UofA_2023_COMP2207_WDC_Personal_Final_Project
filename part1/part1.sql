@@ -101,9 +101,10 @@ CREATE TABLE `Messages` (
   KEY `seller_id` (`seller_id`),
   KEY `ISBN` (`ISBN`),
   CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
-  CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
+  CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`),
   CONSTRAINT `Messages_ibfk_3` FOREIGN KEY (`ISBN`) REFERENCES `Books` (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
