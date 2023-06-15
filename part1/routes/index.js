@@ -136,7 +136,7 @@ router.post('/getSellerChatHistory', function (req, res, next) {
         res.sendStatus(500);
         return;
       }
-      var seller_id = result[0]?.seller_id;
+      var seller_id = result[0] ? result[0].seller_id : undefined;
       if (seller_id) {
         var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
         var params = [seller_id];
