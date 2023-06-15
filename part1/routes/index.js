@@ -44,8 +44,8 @@ router.post('/contactSeller', function (req, res, next) {
       return;
     }
 
-    var query = "INSERT INTO Messages (isbn, buyer, seller, message) VALUES (?, ?, ?, ?);";
-    var params = [req.body.isbn, req.body.buyer, req.body.seller, req.body.message];
+    var query = "INSERT INTO Messages (ISBN, buyer, seller, message) VALUES (?, ?, ?, ?);";
+    var params = [req.body.ISBN, req.body.buyer, req.body.seller, req.body.message];
     connection.query(query, params, function (err, result) {
       connection.release();
 
