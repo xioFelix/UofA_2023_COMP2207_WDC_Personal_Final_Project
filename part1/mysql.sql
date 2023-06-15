@@ -6,9 +6,9 @@ CREATE TABLE Books (
     PRIMARY KEY (ISBN)
 );
 
-CREATE TABLE Books (
-    ISBN varchar(255) NOT NULL,
-    title varchar(255) NOT NULL,
+CREATE TABLE Users (
+    user_id varchar(255) NOT NULL,
+    password varchar(255) NOT NULL,
     auther varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
     PRIMARY KEY (ISBN)
