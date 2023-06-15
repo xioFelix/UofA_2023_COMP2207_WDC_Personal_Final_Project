@@ -2,9 +2,11 @@ var homepage = new Vue({
     el: "#products",
     data: {
         products: [],
+        users: [],
         selectedISBN: '',
         message: '',
         user_id: '',
+        selectedUser: null,
         seller: '',
         showForm: false
     },
@@ -12,7 +14,8 @@ var homepage = new Vue({
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
-            this.user_id = product.user_id;
+            // Set user_id from the selected user
+            this.user_id = this.selectedUser;
             this.showForm = true;
         },
         sendMessage: function() {
@@ -41,7 +44,16 @@ var homepage = new Vue({
             this.seller = '';
         },
     },
-        mounted: function () {
+    mounted: function () {
+        fetch('/allUsers')
+            .then(response => response.json())
+            .then(data => {
+                this.users = data;
+            })
+            .catch(err => {
+                console.error('Error:', err);
+            });
+
         fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
