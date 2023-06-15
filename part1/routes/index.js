@@ -121,4 +121,25 @@ router.post('/checkIfSeller', function (req, res, next) {
   });
 });
 
+router.post('/getSellerChatHistory', function (req, res, next) {
+  req.pool.getConnection(function (err, connection) {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+      return;
+    }
+    var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
+    var params = [req.body.seller_id];
+    connection.query(query, params, function (err, result) {
+      connection.release();
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json(result);
+    });
+  });
+});
+
 module.exports = router;
