@@ -3,5 +3,5 @@ CREATE TABLE Books (
     title varchar(255) NOT NULL,
     auther varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
-    PRIMARY KEY (`ISBN`)
+    PRIMARY KEY (ISBN)
 );
