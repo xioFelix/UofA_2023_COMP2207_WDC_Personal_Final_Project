@@ -74,5 +74,5 @@ DELETE FROM table_name;
 SELECT b.title, b.author, t.sale_date
 FROM Books b
 JOIN Transitions t ON b.ISBN = t.ISBN
-WHERE t.user_id = :user_id AND t.sale_date >= CURDATE() - INTERVAL 30 DAY
+WHERE t.user_id = 1 AND t.sale_date >= CURDATE() - INTERVAL 30 DAY
 ORDER BY t.sale_date DESC;
