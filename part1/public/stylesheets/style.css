@@ -34,7 +34,7 @@
 }
 
 #floating-panel {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 300px;
