@@ -34,7 +34,7 @@ CREATE TABLE Ads (
 CREATE TABLE Transitions (
     transition_id int NOT NULL AUTO_INCREMENT UNIQUE,
     ISBN varchar(255) NOT NULL,
-    sale_date DATE NOT NULL,
+    sale_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     user_id int NOT NULL,
     seller_id int NOT NULL,
     PRIMARY KEY (transition_id),
