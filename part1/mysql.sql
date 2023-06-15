@@ -33,7 +33,7 @@ CREATE TABLE Ads (
 CREATE TABLE Transitions (
     transition_id int NOT NULL AUTO_INCREMENT UNIQUE,
     ISBN varchar(255) NOT NULL,
-    sale_date varchar(255) NOT NULL,
+    sale_date DATE NOT NULL,
     price varchar(255) NOT NULL,
     PRIMARY KEY (ISBN)
 );
