@@ -68,3 +68,5 @@ INSERT INTO Transitions(transition_id, ISBN, sale_date, user_id, seller_id) VALU
 (1, '978-3-16-148410-0', '2023-06-15', 1, 1),
 (2, '978-3-16-148410-1', '2023-05-16', 2, 2),
 (3, '978-3-16-148410-2', '2023-04-17', 3, 3);
+
+DELETE FROM table_name;
