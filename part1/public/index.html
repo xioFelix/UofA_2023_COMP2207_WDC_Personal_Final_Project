@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
     <link rel="stylesheet" href="./stylesheets/style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./javascripts/homepage.js" defer></script>
 </head>
-
 <body>
     <div class="product-grid" id="products">
         <div class="product-card" v-for="product in products" :key="product.ISBN">
@@ -21,20 +18,17 @@
             <p>{{ product.author }}</p>
             <span>{{ product.price }}</span>
             <button @click="openContactForm(product)">Contact Seller</button>
-            <!-- Added button to contact seller -->
+        </div>
+        <div id="contact-form" v-if="showForm">
+            <h2>Contact Seller</h2>
+            <form @submit.prevent="sendMessage">
+                <p>ISBN: {{ selectedISBN }}</p>
+                <p>User: {{ user }}</p>
+                <p>Seller: {{ seller }}</p>
+                <textarea v-model="message" placeholder="Write your message here"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </div>
-    <!-- Contact form (hidden by default) -->
-   <div id="contact-form" v-if="selectedISBN">
-    <h2>Contact Seller</h2>
-    <form @submit.prevent="sendMessage">
-        <p>ISBN: {{ selectedISBN }}</p>
-        <p>User: {{ user }}</p>
-        <p>Seller: {{ seller }}</p>
-        <textarea v-model="message" placeholder="Write your message here"></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</div>
 </body>
-
 </html>
