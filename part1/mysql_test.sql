@@ -70,3 +70,9 @@ INSERT INTO Transitions(transition_id, ISBN, sale_date, user_id, seller_id) VALU
 (3, '978-3-16-148410-2', '2023-04-17', 3, 3);
 
 DELETE FROM table_name;
+
+SELECT b.title, b.author, t.sale_date
+FROM Books b
+JOIN Transitions t ON b.ISBN = t.ISBN
+WHERE t.user_id = :user_id AND t.sale_date >= CURDATE() - INTERVAL 30 DAY
+ORDER BY t.sale_date DESC;
