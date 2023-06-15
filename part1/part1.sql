@@ -203,7 +203,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'123','user1','user1@email.com'),(2,'456','user2','user2@email.com'),(3,'789','user3','user3@email.com'),(4,'123','','sealer1@email.com'),(4,'123',' sealer','sealer@email.com'),(5,'123',' sealer','sealer@email.com');
+INSERT INTO `Users` VALUES (1,'123','user1','user1@email.com'),(2,'456','user2','user2@email.com'),(3,'789','user3','user3@email.com'),(4,'123','','sealer1@email.com'),(4,'123',' sealer4','sealer4@email.com'),(5,'123',' sealer5','sealer5@email.com');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
