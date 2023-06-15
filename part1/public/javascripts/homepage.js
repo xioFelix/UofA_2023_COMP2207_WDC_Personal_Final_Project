@@ -21,6 +21,30 @@ var homepage = new Vue({
             this.getChatHistory();
             this.checkIfSeller(this.selectedUser);
         },
+        checkIfSeller: function (user_id) {
+            fetch('/checkIfSeller', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_id: user_id
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.length === 0) {
+                        console.log('The user is not a seller.');
+                    } else {
+                        console.log('The user is a seller.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        },
+    },
+    
             sendMessage: function() {
         fetch('/contactSeller', {
             method: 'POST',
