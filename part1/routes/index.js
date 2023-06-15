@@ -74,18 +74,24 @@ router.post('/contactSeller', function (req, res, next) {
 });
 
 
-router.post('/getChatHistory', (req, res) => {
-    var user_id = req.body.user_id;
-
-    var sql = 'SELECT * FROM Messages WHERE user_id = ? ORDER BY message_date DESC';
-    db.query(sql, [user_id], function(err, result) {
-        if (err) {
-            console.error('Error:', err);
-            res.status(500).send(err);
-        } else {
-            res.status(200).send(result);
-        }
+router.post('/allUsers', function (req, res, next) {
+  req.pool.getConnection(function (err, connection) {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+      return;
+    }
+    var query = "SELECT * from Users;";
+    connection.query(query, function (err, rows, fields) {
+      connection.release();
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json(rows);
     });
+  });
 });
 
 module.exports = router;
