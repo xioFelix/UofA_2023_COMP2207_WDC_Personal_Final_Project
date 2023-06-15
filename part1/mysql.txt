@@ -3,4 +3,5 @@ CREATE TABLE Books (
     title varchar(255),
     auther varchar(255),
     price varchar(255)
+     PRIMARY KEY (ID)
 );
