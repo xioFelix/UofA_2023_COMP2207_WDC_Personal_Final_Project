@@ -44,7 +44,7 @@ var homepage = new Vue({
         fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
-                this.product = data;
+                this.products = data;
             })
             .catch((err) => {
                 console.error('Error:', err);
