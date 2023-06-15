@@ -94,7 +94,7 @@ CREATE TABLE `Messages` (
   `user_id` int NOT NULL,
   `seller_id` int NOT NULL,
   `message` varchar(255) NOT NULL,
-  `message_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `message_date`  DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`message_id`),
   KEY `user_id` (`user_id`),
   KEY `seller_id` (`seller_id`),
