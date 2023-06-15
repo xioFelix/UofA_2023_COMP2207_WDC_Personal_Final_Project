@@ -20,14 +20,17 @@
             <h2>{{ product.title }}</h2>
             <p>{{ product.author }}</p>
             <span>{{ product.price }}</span>
-            <button @click="openContactForm(product.ISBN)">Contact Seller</button>
+            <button @click="openContactForm(product)">Contact Seller</button>
             <!-- Added button to contact seller -->
         </div>
     </div>
     <!-- Contact form (hidden by default) -->
-    <div id="contact-form" v-if="selectedISBN">
+   <div id="contact-form" v-if="selectedISBN">
     <h2>Contact Seller</h2>
     <form @submit.prevent="sendMessage">
+        <p>ISBN: {{ selectedISBN }}</p>
+        <p>Buyer: {{ buyer }}</p>
+        <p>Seller: {{ seller }}</p>
         <textarea v-model="message" placeholder="Write your message here"></textarea>
         <button type="submit">Send Message</button>
     </form>
