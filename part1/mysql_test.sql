@@ -98,6 +98,6 @@ CREATE TABLE `Messages` (
   PRIMARY KEY (`message_id`),
   KEY `buyer_id` (`buyer_id`),
   KEY `seller_id` (`seller_id`),
-  CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`buyer_id`) REFERENCES `Users` (`user_id`),
+  FOREIGN KEY (`buyer_id`) REFERENCES `Users` (`user_id`),
   CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
 )
