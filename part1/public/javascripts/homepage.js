@@ -21,31 +21,31 @@ var homepage = new Vue({
             this.getChatHistory();
         },
         sendMessage: function() {
-            fetch('/contactSeller', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ISBN: this.selectedISBN,
-                    message: this.message,
-                    user_id: this.user_id,
-                    seller_id: this.seller_id
-                }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                this.showForm = false;
-                this.getChatHistory();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-            this.selectedISBN = '';
-            this.message = '';
-            this.seller = '';
+    fetch('/contactSeller', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+            ISBN: this.selectedISBN,
+            message: this.message,
+            user_id: this.user_id,
+            seller_id: this.seller_id
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        this.showForm = false;
+        this.getChatHistory(); // 在这里添加
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+    this.selectedISBN = '';
+    this.message = '';
+    this.seller = '';
+},
         getChatHistory: function() {
     fetch('/getChatHistory', {
         method: 'POST',
