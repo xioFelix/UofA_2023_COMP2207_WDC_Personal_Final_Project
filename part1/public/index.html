@@ -23,7 +23,7 @@
             <button @click="openContactForm(product)">Contact Seller</button>
         </div>
         <div id="floating-panel" v-if="showForm">
-            <button id="close-button" @click="showForm = false">X</button>
+            <button type="button" id="close-button" @click="showForm = false">X</button>
             <div class="selectUser">
                 <p>Please choose your identity:</p>
                 <select v-model="selectedUser">
