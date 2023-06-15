@@ -9,7 +9,7 @@ CREATE TABLE Books (
 CREATE TABLE Users (
     user_id varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
-    auther varchar(255) NOT NULL,
+    user_name varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
     PRIMARY KEY (ISBN)
 );
