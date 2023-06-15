@@ -93,7 +93,7 @@ CREATE TABLE `Messages` (
   `message_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `seller_id` int NOT NULL,
-  `message` text NOT NULL,
+  `message` varchar(255) NOT NULL,
   `message_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`message_id`),
   KEY `user_id` (`user_id`),
