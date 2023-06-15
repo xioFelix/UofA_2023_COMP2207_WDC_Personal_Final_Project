@@ -7,6 +7,19 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/allUsers', function(req, res, next) {
+    // SQL query
+    var sql = 'SELECT * FROM Users';
+
+    // Execute query
+    connection.query(sql, function (err, result) {
+        if (err) throw err;
+
+        // Send data as JSON
+        res.json(result);
+    });
+});
+
 router.get('/allAds', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
