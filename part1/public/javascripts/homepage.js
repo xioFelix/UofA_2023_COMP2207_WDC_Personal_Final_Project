@@ -23,4 +23,4 @@ window.onload = function () {
 
     xhttp.open("GET", "/allBooks", true);
     xhttp.send();
-}
+};
