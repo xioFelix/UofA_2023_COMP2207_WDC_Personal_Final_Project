@@ -35,9 +35,9 @@
 
 #floating-panel {
     position: fixed;
-    bottom: 0.%;
-    left: 1%;
-    width: 25%;
+    bottom: 0.5%;
+    left: 0.5%;
+    width: 20%;
     background-color: #fff;
     border: 1px solid #000;
     padding: 10px;
