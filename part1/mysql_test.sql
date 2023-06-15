@@ -50,9 +50,9 @@ INSERT INTO Books(ISBN, title, author, price) VALUES
 ('978-3-16-148410-2', 'Book 3', 'Author 3', 50.00);
 
 INSERT INTO Users(user_id, password, user_name, user_email) VALUES
-(1, 'password123', 'user1', 'user1@email.com'),
-(2, 'password456', 'user2', 'user2@email.com'),
-(3, 'password789', 'user3', 'user3@email.com');
+(1, '123', 'user1', 'user1@email.com'),
+(2, '456', 'user2', 'user2@email.com'),
+(3, '789', 'user3', 'user3@email.com');
 
 INSERT INTO Sellers(seller_id, location, user_id) VALUES
 (1, 'Location 1', 1),
