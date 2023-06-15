@@ -25,13 +25,9 @@
 .product-card .product-image {
   position: absolute;
   top: 15%;
-  /* Adjust this to move the image down */
   left: 15%;
-  /* Adjust this to move the image to the right */
   width: 50%;
-  /* Adjust this to reduce the size of the image */
   height: 50%;
-  /* Adjust this to reduce the size of the image */
   object-fit: cover;
   transition: transform 0.3s ease;
 }
