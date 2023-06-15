@@ -30,8 +30,8 @@ CREATE TABLE Ads (
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN)
 );
 
-CREATE TABLE Books (
-    ISBN varchar(255) NOT NULL,
+CREATE TABLE Transitions (
+    transitions varchar(255) NOT NULL,
     title varchar(255) NOT NULL,
     auther varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
