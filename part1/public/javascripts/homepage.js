@@ -2,12 +2,12 @@ var homepage = new Vue({
     el: "#products",
     data: {
         products: [],
-        users: [],
         selectedISBN: '',
         message: '',
         user_id: '',
-        selectedUser: null,
-        seller: '',
+        seller_name: '',
+        seller_id: '',
+        chatHistory: [],
         showForm: false
     },
     methods: {
@@ -15,8 +15,25 @@ var homepage = new Vue({
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
             this.seller_id = product.seller_id;
-            this.user_id = this.selectedUser;
             this.showForm = true;
+
+            fetch('/getChatHistory', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_id1: this.user_id,
+                    user_id2: this.seller_id,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.chatHistory = data;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         },
         sendMessage: function() {
             fetch('/contactSeller', {
@@ -34,6 +51,10 @@ var homepage = new Vue({
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                this.chatHistory.push({
+                    sender: 'You',
+                    message: this.message
+                });
                 this.showForm = false;
             })
             .catch((error) => {
@@ -45,15 +66,6 @@ var homepage = new Vue({
         },
     },
     mounted: function () {
-        fetch('/allUsers')
-            .then(response => response.json())
-            .then(data => {
-                this.users = data;
-            })
-            .catch(err => {
-                console.error('Error:', err);
-            });
-
         fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
