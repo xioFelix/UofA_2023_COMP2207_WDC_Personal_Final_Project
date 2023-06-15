@@ -94,10 +94,12 @@ CREATE TABLE `Messages` (
   `seller_id` int NOT NULL,
   `message` varchar(255) NOT NULL,
   `message_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `ISBN` varchar(255) NOT NULL,
   PRIMARY KEY (`message_id`),
   UNIQUE KEY `message_id` (`message_id`),
   KEY `user_id` (`user_id`),
   KEY `seller_id` (`seller_id`),
+  KEY `ISBN` (`ISBN`),
   CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
   CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
   CONSTRAINT `Messages_ibfk_3` FOREIGN KEY (`ISBN`) REFERENCES `Books` (`ISBN`)
