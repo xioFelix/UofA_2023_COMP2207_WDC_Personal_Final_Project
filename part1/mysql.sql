@@ -9,8 +9,8 @@ CREATE TABLE Books (
 CREATE TABLE Users (
     user_id int NOT NULL AUTO_INCREMENT UNIQUE,
     password varchar(255) NOT NULL,
-    user_name varchar(255) NOT NULL,
-    user_email varchar(255) NOT NULL,
+    user_name varchar(255) NOT NULL UNIQUE,
+    user_email varchar(255) NOT NULL UNIQUE,
     PRIMARY KEY (user_id)
 );
 
