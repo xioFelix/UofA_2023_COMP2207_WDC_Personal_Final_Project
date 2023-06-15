@@ -81,7 +81,12 @@ router.post('/getChatHistory', function (req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT Messages.message_id, Messages.message, Messages.message_date, Users.user_name FROM Messages INNER JOIN Sellers ON Messages.seller_id = Sellers.seller_id INNER JOIN Users ON Sellers.user_id = Users.user_id WHERE Messages.user_id = ? user_id ORDER BY Messages.message_date DESC;";
+    var query = "SELECT Messages.message_id, Messages.message, Messages.message_date, Users.user_name
+FROM Messages
+INNER JOIN Sellers ON Messages.seller_id = Sellers.seller_id
+INNER JOIN Users ON Sellers.user_id = Users.user_id
+WHERE Messages.user_id = ? ORDER BY Messages.message_date DESC;
+";
     var params = [req.body.user_id];
     connection.query(query, params, function (err, result) {
       connection.release();
