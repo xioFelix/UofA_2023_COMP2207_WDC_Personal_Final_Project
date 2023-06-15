@@ -36,4 +36,28 @@ router.post('/sendMessage', function(req, res) {
     // Store the new message in the database
 });
 
+router.post('/contactSeller', function (req, res, next) {
+  req.pool.getConnection(function (err, connection) {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+      return;
+    }
+
+    var query = "INSERT INTO Messages (isbn, buyer, seller, message) VALUES (?, ?, ?, ?);";
+    var params = [req.body.isbn, req.body.buyer, req.body.seller, req.body.message];
+    connection.query(query, params, function (err, result) {
+      connection.release();
+
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+        return;
+      }
+
+      res.sendStatus(200);
+    });
+  });
+});
+
 module.exports = router;
