@@ -1,4 +1,4 @@
-var appdiv = new Vue({
+var homepage = new Vue({
 el: "#app",
 data: {
 text: "Hello"
