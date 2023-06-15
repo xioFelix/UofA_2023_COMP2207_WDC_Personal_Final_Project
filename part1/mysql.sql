@@ -15,10 +15,9 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Ads (
-    ad_id varchar(255) NOT NULL,
+    ad_id int NOT NULL,
     ISBN varchar(255) NOT NULL,
     seller_id varchar(255) NOT NULL,
-    price varchar(255) NOT NULL,
     PRIMARY KEY (ad_id)
 );
 
