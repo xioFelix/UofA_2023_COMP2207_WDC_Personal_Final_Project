@@ -33,8 +33,8 @@ var homepage = new Vue({
                 seller_id: this.seller_id
             }),
         })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
             console.log('Success:', data);
             this.showForm = false;
             this.getChatHistory();
@@ -56,8 +56,8 @@ var homepage = new Vue({
             user_id: this.user_id
         }),
     })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
         console.log('Success:', data);
         this.chatHistory = data;
     })
@@ -76,11 +76,11 @@ var homepage = new Vue({
     },
     mounted: function () {
         fetch('/allUsers')
-            .then(response => response.json())
-            .then(data => {
+            .then((response) => response.json())
+            .then((data) => {
                 this.users = data;
             })
-            .catch(err => {
+            .catch((err) => {
                 console.error('Error:', err);
             });
 
