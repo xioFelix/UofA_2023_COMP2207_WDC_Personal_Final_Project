@@ -11,7 +11,7 @@ var homepage = new Vue({
     methods: {
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
-            this.seller = product.seller;
+            this.seller = product.seller_name;
             this.showForm = true;
         },
         sendMessage: function() {
