@@ -7,17 +7,25 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/allUsers', function(req, res, next) {
-    // SQL query
-    var sql = 'SELECT * FROM Users';
+router.get('/allUsers', function (req, res, next) {
+  req.pool.getConnection(function (err, connection) {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+      return;
+    }
 
-    // Execute query
-    connection.query(sql, function (err, result) {
-        if (err) throw err;
-
-        // Send data as JSON
-        res.json(result);
+    var query = "SELECT Ads.ad_id, Ads.ISBN, Books.title, Books.author, Books.price, Books.image, Sellers.seller_id, Sellers.location, Users.user_name AS seller_name FROM Ads JOIN Books ON Ads.ISBN = Books.ISBN JOIN Sellers ON Ads.seller_id = Sellers.seller_id JOIN Users ON Sellers.user_id = Users.user_id;";
+    connection.query(query, function (err, rows, fields) {
+      connection.release();
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+        return;
+      }
+      res.json(rows);
     });
+  });
 });
 
 router.get('/allAds', function (req, res, next) {
