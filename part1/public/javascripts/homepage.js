@@ -9,7 +9,7 @@ var homepage = new Vue({
         selectedUser: null,
         seller: '',
         showForm: false,
-        chatHistory: [],
+        chatHistory: []
     },
     methods: {
         openContactForm: function(product) {
