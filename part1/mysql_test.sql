@@ -94,7 +94,7 @@ CREATE TABLE `Messages` (
   `user_id` int NOT NULL,
   `seller_id` int NOT NULL,
   `message` varchar(255) NOT NULL,
-  `message_date`  DATE NOT NULL DEFAULT DATE(),
+  `message_date`  DATE NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`message_id`),
   FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
   FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
