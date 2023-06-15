@@ -25,7 +25,7 @@ CREATE TABLE Sellers (
 CREATE TABLE Ads (
     ad_id int NOT NULL AUTO_INCREMENT UNIQUE,
     ISBN varchar(255) NOT NULL,
-    seller_id varchar(255) NOT NULL,
+    seller_id int NOT NULL,
     PRIMARY KEY (ad_id),
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
     FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
@@ -40,5 +40,5 @@ CREATE TABLE Transitions (
     PRIMARY KEY (transition_id),
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (sellers_id) REFERENCES Sellers(seller_id)
+    FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
 );
