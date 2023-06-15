@@ -42,3 +42,29 @@ CREATE TABLE Transitions (
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
 );
+
+
+INSERT INTO Books(ISBN, title, author, price) VALUES
+('978-3-16-148410-0', 'Book 1', 'Author 1', 19.99),
+('978-3-16-148410-1', 'Book 2', 'Author 2', 29.99),
+('978-3-16-148410-2', 'Book 3', 'Author 3', 39.99);
+
+INSERT INTO Users(user_id, password, user_name, user_email) VALUES
+(1, 'password123', 'user1', 'user1@email.com'),
+(2, 'password456', 'user2', 'user2@email.com'),
+(3, 'password789', 'user3', 'user3@email.com');
+
+INSERT INTO Sellers(seller_id, location, user_id) VALUES
+(1, 'Location 1', 1),
+(2, 'Location 2', 2),
+(3, 'Location 3', 3);
+
+INSERT INTO Ads(ad_id, ISBN, seller_id) VALUES
+(1, '978-3-16-148410-0', 1),
+(2, '978-3-16-148410-1', 2),
+(3, '978-3-16-148410-2', 3);
+
+INSERT INTO Transitions(transition_id, ISBN, sale_date, user_id, seller_id) VALUES
+(1, '978-3-16-148410-0', '2023-06-15', 1, 1),
+(2, '978-3-16-148410-1', '2023-06-16', 2, 2),
+(3, '978-3-16-148410-2', '2023-06-17', 3, 3);
