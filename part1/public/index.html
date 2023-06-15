@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace</title>
-    <link rel="stylesheet" href="./stylesheets/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./javascripts/homepage.js" defer></script>
-</head>
-<body>
-    <div class="product-grid" id="products">
-        <div class="product-card" v-for="product in products" :key="product.ISBN">
-            <div class="image-container">
-                <!-- Bind the src attribute -->
-                <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marketplace</title>
+        <link rel="stylesheet" href="./stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./javascripts/homepage.js" defer></script>
+    </head>
+
+    <body>
+        <div class="product-grid" id="products">
+            <div class="product-card" v-for="product in products" :key="product.ISBN">
+                <div class="image-container">
+                    <!-- Bind the src attribute -->
+                    <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
+                </div>
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.author }}</p>
+                <span>{{ product.price }}</span>
+                <p>{{ product.location }}</p> <!-- Display the seller's location -->
+                <p>{{ product.seller_name }}</p> <!-- Display the seller's user name -->
+                <button type="button" @click="openContactForm(product)">Contact Seller</button>
             </div>
-            <h2>{{ product.title }}</h2>
-            <p>{{ product.author }}</p>
-            <span>{{ product.price }}</span>
-            <p>{{ product.location }}</p> <!-- Display the seller's location -->
-            <p>{{ product.seller_name }}</p> <!-- Display the seller's user name -->
-            <button type="button" @click="openContactForm(product)">Contact Seller</button>
-        </div>
-        <div id="floating-panel" v-if="showForm">
-            <button type="button" id="close-button" @click="showForm = false">X</button>
-            <div class="selectUser">
-                <p>Please choose your identity:</p>
-                <select v-model="selectedUser">
-                    <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
-                </select>
-            </div>
-            <div id="contact-form">
-                <h2>Contact Seller</h2>
-                <form @submit.prevent="sendMessage">
-                    <p>ISBN: {{ selectedISBN }}</p>
-                    <p>UserID: {{ user_id }}</p>
-                    <p>Seller Name: {{ seller_name }}</p>
-                    <textarea v-model="message" placeholder="Write your message here"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-            <div id="chat-history">
-                <h2>Chat History</h2>
-                <div class="message" v-for="msg in chatHistory">
-                    <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
+            <div id="floating-panel" v-if="showForm">
+                <button type="button" id="close-button" @click="showForm = false">X</button>
+                <div class="selectUser">
+                    <p>Please choose your identity:</p>
+                    <select v-model="selectedUser">
+                        <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
+                    </select>
+                </div>
+                <div id="contact-form">
+                    <h2>Contact Seller</h2>
+                    <form @submit.prevent="sendMessage">
+                        <p>ISBN: {{ selectedISBN }}</p>
+                        <p>UserID: {{ user_id }}</p>
+                        <p>Seller Name: {{ seller_name }}</p>
+                        <textarea v-model="message" placeholder="Write your message here"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div id="chat-history">
+                    <h2>Chat History</h2>
+                    <div class="message" v-for="msg in chatHistory">
+                        <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+
 </html>
