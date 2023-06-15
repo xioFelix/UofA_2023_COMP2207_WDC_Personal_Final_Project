@@ -92,7 +92,7 @@ router.post('/getChatHistory', function (req, res, next) {
         return;
       }
 
-      res.sendStatus(200);
+      res.json(result);
     });
   });
 });
