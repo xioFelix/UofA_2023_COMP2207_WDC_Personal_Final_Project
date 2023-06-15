@@ -140,7 +140,7 @@ CREATE TABLE `Sellers` (
 
 LOCK TABLES `Sellers` WRITE;
 /*!40000 ALTER TABLE `Sellers` DISABLE KEYS */;
-INSERT INTO `Sellers` VALUES (1,'Location 1',1),(2,'Location 2',2),(3,'Location 3',3),,(3,'Location 3',3);
+INSERT INTO `Sellers` VALUES (4,'Location 1',1),(2,'Location 2',2),(3,'Location 3',3);
 /*!40000 ALTER TABLE `Sellers` ENABLE KEYS */;
 UNLOCK TABLES;
 
