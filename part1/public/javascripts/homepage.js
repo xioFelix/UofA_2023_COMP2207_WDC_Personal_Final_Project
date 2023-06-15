@@ -24,7 +24,7 @@ var homepage = new Vue({
                     ISBN: this.selectedISBN,
                     message: this.message,
                     user_id: this.user_id,
-                    seller_id: this.seller_name
+                    seller_id: this.seller_id
                 }),
             })
             .then(response => response.json())
