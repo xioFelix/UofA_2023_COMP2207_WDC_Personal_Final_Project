@@ -1,4 +1,11 @@
 CREATE TABLE Books (
+    ISBN varchar(255) NOT NULL,
+    title varchar(255) NOT NULL,
+    auther varchar(255) NOT NULL,
+    price varchar(255) NOT NULL,
+    PRIMARY KEY (ISBN)
+);
+CREATE TABLE Books (
     ISBN varchar(255) NOT NULL UNIQUE,
     title varchar(255) NOT NULL,
     auther varchar(255) NOT NULL,
@@ -28,12 +35,4 @@ CREATE TABLE Ads (
     seller_id varchar(255) NOT NULL,
     PRIMARY KEY (ad_id),
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN)
-);
-
-CREATE TABLE Books (
-    ISBN varchar(255) NOT NULL,
-    title varchar(255) NOT NULL,
-    auther varchar(255) NOT NULL,
-    price varchar(255) NOT NULL,
-    PRIMARY KEY (ISBN)
 );
