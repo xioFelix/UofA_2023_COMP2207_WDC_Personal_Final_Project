@@ -4,7 +4,7 @@ var homepage = new Vue({
         products: [],
         selectedISBN: '',
         message: '',
-        user: 'user1',
+        user: '1',
         seller: '',
         showForm: false
     },
@@ -23,7 +23,7 @@ var homepage = new Vue({
                 body: JSON.stringify({
                     ISBN: this.selectedISBN,
                     message: this.message,
-                    user: this.user,
+                    user_id: this.user_id,
                     seller: this.seller_name
                 }),
             })
