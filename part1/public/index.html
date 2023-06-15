@@ -25,14 +25,13 @@
         </div>
     </div>
     <!-- Contact form (hidden by default) -->
-    <div id="contact-form" style="display: none;">
-        <h2>Contact Seller</h2>
-        <form @submit.prevent="sendMessage">
-            <input type="hidden" id="itemISBN" name="itemISBN">
-            <textarea id="message" name="message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <div id="contact-form" v-if="selectedISBN">
+    <h2>Contact Seller</h2>
+    <form @submit.prevent="sendMessage">
+        <textarea v-model="message" placeholder="Write your message here"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
 </body>
 
 </html>
