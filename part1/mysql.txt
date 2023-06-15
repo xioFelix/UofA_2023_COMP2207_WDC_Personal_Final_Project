@@ -1,7 +1,6 @@
 CREATE TABLE Books (
     ISBN varchar(255),
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
+    title varchar(255),
+    auther varchar(255),
+    price varchar(255)
 );
