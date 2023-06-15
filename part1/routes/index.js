@@ -82,14 +82,17 @@ router.post('/getChatHistory', function (req, res, next) {
       return;
     }
     var query = "SELECT * FROM Messages WHERE user_id = ? ORDER BY message_date DESC;";
-    connection.query(query, function (err, rows, fields) {
+    var params = [req.body.user_id];
+    connection.query(query, params, function (err, result) {
       connection.release();
+
       if (err) {
         console.error(err);
         res.sendStatus(500);
         return;
       }
-      res.json(rows);
+
+      res.sendStatus(200);
     });
   });
 });
