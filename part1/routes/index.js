@@ -7,14 +7,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/products', function (req, res, next) {
+router.get('/allProducts', function (req, res, next) {
   //Connect to the database
   req.pool.getConnection(function (err, connection) {
     if (err) {
       res.sendStatus(500);
       return;
     }
-    var query = "SHOW TABLES";
+    var query = "SELECT * FROM Books";
     connection.query(query, function (rows, fields) {
       connection.release();
       if (err) {
