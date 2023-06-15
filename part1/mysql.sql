@@ -10,8 +10,8 @@ CREATE TABLE Users (
     user_id varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     user_name varchar(255) NOT NULL,
-    price varchar(255) NOT NULL,
-    PRIMARY KEY (ISBN)
+    user_email varchar(255) NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
 CREATE TABLE Ads (
