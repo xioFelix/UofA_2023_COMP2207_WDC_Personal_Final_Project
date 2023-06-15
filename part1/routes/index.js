@@ -16,10 +16,10 @@ router.get('/allBooks', function (req, res, next) {
     }
 
     var query = "SELECT * FROM Books;";
-    connection.query(query, function (err, rows, fields) {
+    connection.query(query, function (err1, rows, fields) {
       connection.release();
-      if (err) {
-        console.error(err);
+      if (err1) {
+        console.error(err1);
         res.sendStatus(500);
         return;
       }
