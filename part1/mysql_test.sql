@@ -87,3 +87,17 @@ JOIN Transitions ON Books.ISBN = Transitions.ISBN
 GROUP BY Books.ISBN
 ORDER BY traded_count DESC
 LIMIT 10;
+
+
+CREATE TABLE `Messages` (
+  `message_id` int NOT NULL AUTO_INCREMENT,
+  `buyer_id` int NOT NULL,
+  `seller_id` int NOT NULL,
+  `message` text NOT NULL,
+  `message_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`message_id`),
+  KEY `buyer_id` (`buyer_id`),
+  KEY `seller_id` (`seller_id`),
+  CONSTRAINT `Messages_ibfk_1` FOREIGN KEY (`buyer_id`) REFERENCES `Users` (`user_id`),
+  CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
+)
