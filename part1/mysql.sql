@@ -38,4 +38,6 @@ CREATE TABLE Transitions (
     sellers_id int NOT NULL,
     PRIMARY KEY (transition_id),
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (sellers_id) REFERENCES Sellers(seller_id)
 );
