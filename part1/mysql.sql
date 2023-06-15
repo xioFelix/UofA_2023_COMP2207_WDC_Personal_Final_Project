@@ -15,7 +15,7 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Sellers (
-    seller_id varchar(255) NOT NULL AUTO_INCREMENT UNIQUE,
+    seller_id int NOT NULL AUTO_INCREMENT UNIQUE,
     password varchar(255) NOT NULL,
     user_name varchar(255) NOT NULL,
     user_email varchar(255) NOT NULL,
