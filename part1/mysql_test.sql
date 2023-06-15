@@ -73,6 +73,6 @@ DELETE FROM table_name;
 
 SELECT Books.title, Books.author, Transitions.sale_date
 FROM Books
-JOIN Transitions ON b.ISBN = Transitions.ISBN
+JOIN Transitions ON Books.ISBN = Transitions.ISBN
 WHERE Transitions.user_id = 1 AND Transitions.sale_date >= CURDATE() - INTERVAL 30 DAY
 ORDER BY Transitions.sale_date DESC;
