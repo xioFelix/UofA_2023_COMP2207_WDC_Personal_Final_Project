@@ -73,4 +73,19 @@ router.post('/contactSeller', function (req, res, next) {
   });
 });
 
+router.post('/getChatHistory', (req, res) => {
+    const { user_id1, user_id2 } = req.body;
+
+    const query = `SELECT * FROM Messages WHERE (sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?) ORDER BY message_date DESC`;
+    connection.query(query, [user_id1, user_id2, user_id2, user_id1], (error, results) => {
+        if (error) {
+            console.error('Error:', error);
+            res.status(500).send('Error occurred while fetching chat history');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+
 module.exports = router;
