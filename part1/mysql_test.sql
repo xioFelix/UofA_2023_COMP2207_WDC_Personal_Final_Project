@@ -91,13 +91,13 @@ LIMIT 10;
 
 CREATE TABLE `Messages` (
   `message_id` int NOT NULL AUTO_INCREMENT,
-  `buyer_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `seller_id` int NOT NULL,
   `message` text NOT NULL,
   `message_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`message_id`),
-  KEY `buyer_id` (`buyer_id`),
+  KEY `user_id` (`user_id`),
   KEY `seller_id` (`seller_id`),
-  FOREIGN KEY (`buyer_id`) REFERENCES `Users` (`user_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
   FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
 )
