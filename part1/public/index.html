@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="product-grid" id="products">
-        <select v-model="selectedUser">
-            <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
-        </select>
-
+        <div>
+            <select v-model="selectedUser">
+                <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
+            </select>
+        </div>
         <div class="product-card" v-for="product in products" :key="product.ISBN">
             <div class="image-container">
                 <!-- Bind the src attribute -->
