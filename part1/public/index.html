@@ -27,23 +27,25 @@
             <p>{{ product.seller_name }}</p> <!-- Display the seller's user name -->
             <button @click="openContactForm(product)">Contact Seller</button>
         </div>
-        <div id="contact-form" v-if="showForm">
-            <h2>Contact Seller</h2>
-            <form @submit.prevent="sendMessage">
-                <p>ISBN: {{ selectedISBN }}</p>
-                <p>UserID: {{ user_id }}</p>
-                <p>Seller Name: {{ seller_name }}</p>
-                <textarea v-model="message" placeholder="Write your message here"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <div id="floating-panel" v-if="showForm">
+            <button id="close-button" @click="showForm = false">X</button>
+            <div id="contact-form">
+                <h2>Contact Seller</h2>
+                <form @submit.prevent="sendMessage">
+                    <p>ISBN: {{ selectedISBN }}</p>
+                    <p>UserID: {{ user_id }}</p>
+                    <p>Seller Name: {{ seller_name }}</p>
+                    <textarea v-model="message" placeholder="Write your message here"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div id="chat-history">
+                <h2>Chat History</h2>
+                <div class="message" v-for="msg in chatHistory">
+                    <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
+                </div>
+            </div>
         </div>
-        <div id="chat-history" v-if="showForm">
-    <h2>Chat History</h2>
-    <div class="message" v-for="msg in chatHistory">
-        <p><strong>{{ msg.sender_name }}:</strong> {{ msg.message }}</p>
-    </div>
-</div>
-
     </div>
 </body>
 </html>
