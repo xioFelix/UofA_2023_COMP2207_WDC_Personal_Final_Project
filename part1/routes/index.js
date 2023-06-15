@@ -14,6 +14,7 @@ router.get('/allBooks', function (req, res, next) {
       res.sendStatus(500);
       return;
     }
+
     var query = "SELECT * FROM Books;";
     connection.query(query, function (rows, fields) {
       connection.release();
