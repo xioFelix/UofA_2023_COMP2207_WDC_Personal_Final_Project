@@ -1,5 +1,5 @@
 var homepage = new Vue({
-el: "#app",
+el: "#products",
 data: {
 text: "Hello"
 }
