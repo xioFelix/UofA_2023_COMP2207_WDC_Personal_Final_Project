@@ -45,9 +45,9 @@ CREATE TABLE Transitions (
 
 
 INSERT INTO Books(ISBN, title, author, price) VALUES
-('978-3-16-148410-0', 'Book 1', 'Author 1', 19.99),
-('978-3-16-148410-1', 'Book 2', 'Author 2', 29.99),
-('978-3-16-148410-2', 'Book 3', 'Author 3', 39.99);
+('978-3-16-148410-0', 'Book 1', 'Author 1', 0.99),
+('978-3-16-148410-1', 'Book 2', 'Author 2', 99.99),
+('978-3-16-148410-2', 'Book 3', 'Author 3', 50.00);
 
 INSERT INTO Users(user_id, password, user_name, user_email) VALUES
 (1, 'password123', 'user1', 'user1@email.com'),
