@@ -29,7 +29,7 @@
     <h2>Contact Seller</h2>
     <form @submit.prevent="sendMessage">
         <p>ISBN: {{ selectedISBN }}</p>
-        <p>Buyer: {{ buyer }}</p>
+        <p>User: {{ user }}</p>
         <p>Seller: {{ seller }}</p>
         <textarea v-model="message" placeholder="Write your message here"></textarea>
         <button type="submit">Send Message</button>
