@@ -1,5 +1,6 @@
 var express = require('express');
 var Vue = require('vue');
+var mysql = require('mysql2');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
