@@ -27,7 +27,8 @@ CREATE TABLE Ads (
     ISBN varchar(255) NOT NULL,
     seller_id varchar(255) NOT NULL,
     PRIMARY KEY (ad_id),
-    FOREIGN KEY (ISBN) REFERENCES Books(ISBN)
+    FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
+    FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
 );
 
 CREATE TABLE Transitions (
