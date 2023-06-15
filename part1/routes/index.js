@@ -74,5 +74,18 @@ router.post('/contactSeller', function (req, res, next) {
 });
 
 
+router.post('/getChatHistory', (req, res) => {
+    var user_id = req.body.user_id;
+
+    var sql = 'SELECT * FROM Messages WHERE user_id = ? ORDER BY message_date DESC';
+    db.query(sql, [user_id], function(err, result) {
+        if (err) {
+            console.error('Error:', err);
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    });
+});
 
 module.exports = router;
