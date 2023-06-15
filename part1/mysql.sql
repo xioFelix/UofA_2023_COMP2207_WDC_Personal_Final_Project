@@ -16,7 +16,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Sellers (
     seller_id int NOT NULL AUTO_INCREMENT UNIQUE,
-    user_name varchar(255) NOT NULL,
+    location varchar(255) NOT NULL,
     user_email varchar(255) NOT NULL,
     PRIMARY KEY (user_id)
 );
