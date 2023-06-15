@@ -128,18 +128,33 @@ router.post('/getSellerChatHistory', function (req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
+    var query = "SELECT seller_id FROM Sellers WHERE user_id = ?;";
     var params = [req.body.seller_id];
     connection.query(query, params, function (err, result) {
-      connection.release();
       if (err) {
         console.error(err);
         res.sendStatus(500);
         return;
       }
-      res.json(result);
+      var seller_id = result[0]?.seller_id;
+      if (seller_id) {
+        var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
+        var params = [seller_id];
+        connection.query(query, params, function (err, result) {
+          connection.release();
+          if (err) {
+            console.error(err);
+            res.sendStatus(500);
+            return;
+          }
+          res.json(result);
+        });
+      } else {
+        res.sendStatus(404);
+      }
     });
   });
 });
+
 
 module.exports = router;
