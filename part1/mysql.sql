@@ -26,7 +26,9 @@ CREATE TABLE Ads (
     ad_id int NOT NULL AUTO_INCREMENT UNIQUE,
     ISBN varchar(255) NOT NULL,
     seller_id varchar(255) NOT NULL,
-    PRIMARY KEY (ad_id)
+    PRIMARY KEY (ad_id),
+    FOREIGN KEY (ISBN) REFERENCES Users(user_id)
+
 );
 
 CREATE TABLE Books (
