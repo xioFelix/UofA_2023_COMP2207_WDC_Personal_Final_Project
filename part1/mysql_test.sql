@@ -71,8 +71,8 @@ INSERT INTO Transitions(transition_id, ISBN, sale_date, user_id, seller_id) VALU
 
 DELETE FROM table_name;
 
-SELECT Books.title, Books.author, t.sale_date
+SELECT Books.title, Books.author, Transitions.sale_date
 FROM Books
-JOIN Transitions ON b.ISBN = t.ISBN
-WHERE t.user_id = 1 AND t.sale_date >= CURDATE() - INTERVAL 30 DAY
-ORDER BY t.sale_date DESC;
+JOIN Transitions ON b.ISBN = Transitions.ISBN
+WHERE Transitions.user_id = 1 AND Transitions.sale_date >= CURDATE() - INTERVAL 30 DAY
+ORDER BY Transitions.sale_date DESC;
