@@ -1,7 +1,7 @@
 CREATE TABLE Books (
     ISBN varchar(255) NOT NULL UNIQUE,
     title varchar(255) NOT NULL,
-    auther varchar(255) NOT NULL,
+    author varchar(255) NOT NULL,
     price DECIMAL(7,2) NOT NULL,
     PRIMARY KEY (ISBN)
 );
