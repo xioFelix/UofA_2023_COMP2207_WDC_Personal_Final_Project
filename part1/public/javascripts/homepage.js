@@ -1,6 +1,6 @@
 var homepage = new Vue({
-el: "#products",
-data: {
-text: []
-}
+    el: "#products",
+    data: {
+        product: []
+    }
 });
