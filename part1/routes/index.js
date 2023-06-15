@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// ...
 router.get('/allAds', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
@@ -28,7 +27,6 @@ router.get('/allAds', function (req, res, next) {
     });
   });
 });
-// ...
 
 
 router.post('/contactSeller', function (req, res, next) {
