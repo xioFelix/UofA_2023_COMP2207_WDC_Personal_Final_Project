@@ -18,6 +18,7 @@ var homepage = new Vue({
             this.seller_id = product.seller_id;
             this.user_id = this.selectedUser;
             this.showForm = true;
+            this.getChatHistory();
         },
         sendMessage: function() {
             fetch('/contactSeller', {
