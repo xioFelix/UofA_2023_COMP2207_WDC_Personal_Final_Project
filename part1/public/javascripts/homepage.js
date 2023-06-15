@@ -4,7 +4,7 @@ var homepage = new Vue({
         products: [],
         selectedISBN: '',
         message: '',
-        user_id: '1',
+        user_id: '',
         seller: '',
         showForm: false
     },
@@ -12,7 +12,7 @@ var homepage = new Vue({
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
-            this.user_id = data.user_id;
+            this.user_id = product.user_id;
             this.showForm = true;
         },
         sendMessage: function() {
