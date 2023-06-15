@@ -37,8 +37,8 @@ router.post('/contactSeller', function (req, res, next) {
       return;
     }
 
-    var query = "INSERT INTO Messages (ISBN, user_id, seller, message) VALUES (?, ?, ?, ?);";
-    var params = [req.body.ISBN, req.body.user_id, req.body.seller, req.body.message];
+    var query = "INSERT INTO Messages (ISBN, user_id, seller_id, message) VALUES (?, ?, ?, ?);";
+    var params = [req.body.ISBN, req.body.user_id, req.body.seller_id, req.body.message];
     connection.query(query, params, function (err, result) {
       connection.release();
 
