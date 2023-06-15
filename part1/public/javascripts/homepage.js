@@ -2,18 +2,17 @@ var homepage = new Vue({
     el: "#products",
     data: {
         products: [],
-        selectedISBN: '',  // 用于保存当前选中的图书ISBN
-        message: '',  // 用于保存用户输入的消息
+        selectedISBN: '',
+        message: '',
         buyer: 'Buyer1',
         seller: '',
     },
     methods: {
         openContactForm: function(product) {
-            this.selectedISBN = product.ISBN;  // 保存当前选中的图书ISBN
-            this.seller = product.seller;  // 从产品数据中获取卖家信息
+            this.selectedISBN = product.ISBN;
+            this.seller = product.seller;
         },
         sendMessage: function() {
-            // 在这里，你可以使用 AJAX 将消息发送到服务器
             fetch('/contactSeller', {
                 method: 'POST',
                 headers: {
