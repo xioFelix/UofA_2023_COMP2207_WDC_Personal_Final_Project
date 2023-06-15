@@ -99,5 +99,5 @@ CREATE TABLE `Messages` (
   KEY `buyer_id` (`buyer_id`),
   KEY `seller_id` (`seller_id`),
   FOREIGN KEY (`buyer_id`) REFERENCES `Users` (`user_id`),
-  CONSTRAINT `Messages_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
+  FOREIGN KEY (`seller_id`) REFERENCES `Sellers` (`seller_id`)
 )
