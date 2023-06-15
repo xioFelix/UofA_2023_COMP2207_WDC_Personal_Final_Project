@@ -81,7 +81,7 @@ router.post('/getChatHistory', function (req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT * from Users;";
+    var query = "SELECT * FROM Messages WHERE user_id = ? ORDER BY message_date DESC;";
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
