@@ -1,2 +1,7 @@
-INSERT INTO Books (ISBN, ContactName, Address, City, PostalCode, Country)
-VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+CREATE TABLE Books (
+    ISBN varchar(255),
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
