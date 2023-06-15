@@ -50,3 +50,8 @@
     right: 0;
     cursor: pointer;
 }
+
+#chat-history {
+  max-height: 300px; /* 或者你想要的任何高度 */
+  overflow-y: auto;
+}
