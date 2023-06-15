@@ -18,8 +18,8 @@ CREATE TABLE Sellers (
     seller_id int NOT NULL AUTO_INCREMENT UNIQUE,
     location varchar(255) NOT NULL,
     user_id varchar(255) NOT NULL,
-    PRIMARY KEY (seller_id)
-    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+    PRIMARY KEY (seller_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Ads (
