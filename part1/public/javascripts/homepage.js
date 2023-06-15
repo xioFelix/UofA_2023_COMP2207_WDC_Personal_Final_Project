@@ -12,7 +12,7 @@ var homepage = new Vue({
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
-            this.user_id = user_id;
+            this.user_id = data.user_id;
             this.showForm = true;
         },
         sendMessage: function() {
