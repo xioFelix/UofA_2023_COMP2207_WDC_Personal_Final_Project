@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.get('/allUsers', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      user_id
+      console.error(err);
       res.sendStatus(500);
       return;
     }
@@ -18,7 +18,6 @@ router.get('/allUsers', function (req, res, next) {
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
-        user_id
         res.sendStatus(500);
         return;
       }
@@ -30,7 +29,7 @@ router.get('/allUsers', function (req, res, next) {
 router.get('/allAds', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      user_id
+      console.error(err);
       res.sendStatus(500);
       return;
     }
@@ -39,7 +38,6 @@ router.get('/allAds', function (req, res, next) {
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
-        user_id
         res.sendStatus(500);
         return;
       }
@@ -52,7 +50,7 @@ router.get('/allAds', function (req, res, next) {
 router.post('/contactSeller', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      user_id
+      console.error(err);
       res.sendStatus(500);
       return;
     }
@@ -63,7 +61,6 @@ router.post('/contactSeller', function (req, res, next) {
       connection.release();
 
       if (err) {
-        user_id
         res.sendStatus(500);
         return;
       }
