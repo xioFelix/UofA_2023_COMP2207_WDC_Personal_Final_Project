@@ -81,9 +81,9 @@ JOIN Transitions ON Books.ISBN = Transitions.ISBN
 WHERE Transitions.user_id = 1 AND Transitions.sale_date >= CURDATE() - INTERVAL 30 DAY
 ORDER BY Transitions.sale_date DESC;
 
-SELECT b.title, b.author, COUNT(*) as traded_count
+SELECT Books.title, Books.author, COUNT(*) as traded_count
 FROM Books
-JOIN Transitions t ON b.ISBN = t.ISBN
-GROUP BY b.ISBN
+JOIN Transitions ON Books.ISBN = Transitions.ISBN
+GROUP BY Books.ISBN
 ORDER BY traded_count DESC
 LIMIT 10;
