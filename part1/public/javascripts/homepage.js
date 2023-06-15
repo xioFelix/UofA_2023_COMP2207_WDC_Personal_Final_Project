@@ -18,8 +18,32 @@ var homepage = new Vue({
             this.seller_id = product.seller_id;
             this.user_id = this.selectedUser;
             this.showForm = true;
-            this.getChatHistory();
+            this.getChatHistory(); this.checkIfSeller(this.selectedUser); // Check if the selected user is a seller
         },
+        // Rest of the code remains the same...
+        checkIfSeller: function (user_id) {
+            fetch('/checkIfSeller', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_id: user_id
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.length === 0) {
+                        console.log('The user is not a seller.');
+                    } else {
+                        console.log('The user is a seller.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        },
+    },
             sendMessage: function() {
         fetch('/contactSeller', {
             method: 'POST',
