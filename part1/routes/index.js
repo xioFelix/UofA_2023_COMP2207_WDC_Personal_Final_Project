@@ -18,6 +18,7 @@ router.get('/allUsers', function (req, res, next) {
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
+        console.error(err);
         res.sendStatus(500);
         return;
       }
@@ -38,6 +39,7 @@ router.get('/allAds', function (req, res, next) {
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
+        console.error(err);
         res.sendStatus(500);
         return;
       }
@@ -61,6 +63,7 @@ router.post('/contactSeller', function (req, res, next) {
       connection.release();
 
       if (err) {
+        console.error(err);
         res.sendStatus(500);
         return;
       }
