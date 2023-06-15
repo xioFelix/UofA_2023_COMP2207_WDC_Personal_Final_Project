@@ -37,6 +37,7 @@ var homepage = new Vue({
             .then(data => {
                 console.log('Success:', data);
                 this.showForm = false;
+                this.getChatHistory();
             })
             .catch((error) => {
                 console.error('Error:', error);
