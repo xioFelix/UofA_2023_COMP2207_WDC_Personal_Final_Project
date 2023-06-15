@@ -20,7 +20,7 @@
             <span>{{ product.price }}</span>
             <p>{{ product.location }}</p> <!-- Display the seller's location -->
             <p>{{ product.seller_name }}</p> <!-- Display the seller's user name -->
-            <button @click="openContactForm(product)">Contact Seller</button>
+            <button type="button" @click="openContactForm(product)">Contact Seller</button>
         </div>
         <div id="floating-panel" v-if="showForm">
             <button type="button" id="close-button" @click="showForm = false">X</button>
