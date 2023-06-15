@@ -81,7 +81,7 @@ router.post('/getChatHistory', function (req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.user_id = ? ORDER BY message_date DESC;";
+    var query = "SELECT * FROM Messages WHERE user_id = ? ORDER BY message_date DESC;";
     var params = [req.body.user_id];
     connection.query(query, params, function (err, result) {
       connection.release();
