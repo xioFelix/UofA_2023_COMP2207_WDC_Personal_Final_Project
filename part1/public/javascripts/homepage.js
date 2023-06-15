@@ -40,8 +40,8 @@ var homepage = new Vue({
             this.seller = '';
         },
     },
-    mounted: function () {
-        fetch('/allBooks')
+        mounted: function () {
+        fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
                 this.products = data;
