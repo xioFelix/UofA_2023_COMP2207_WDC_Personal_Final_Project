@@ -5,7 +5,7 @@ var homepage = new Vue({
         users: [],
         selectedISBN: '',
         message: '',
-        user_id: '',
+        user_id: 'Please manual select the user',
         selectedUser: null,
         seller: '',
         showForm: false,
