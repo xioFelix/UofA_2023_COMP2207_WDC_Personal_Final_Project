@@ -46,24 +46,24 @@ var homepage = new Vue({
             this.seller = '';
         },
         getChatHistory: function() {
-        fetch('/getChatHistory', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                user_id: this.user_id
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            this.chatHistory = data;
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    fetch('/getChatHistory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+            user_id: this.user_id
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        this.chatHistory = data;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+},
     },
     watch: {
         selectedUser: function(newUserId, oldUserId) {
