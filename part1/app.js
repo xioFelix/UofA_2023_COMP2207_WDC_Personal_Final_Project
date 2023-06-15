@@ -17,9 +17,10 @@ var pool = mysql.createPool({
 });
 
 app.use(function (req, res, next) {
-    req.pool = dbConnectionPool;
+    req.pool = pool;
     next();
 });
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
