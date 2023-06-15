@@ -37,6 +37,12 @@
                 <button type="submit">Send Message</button>
             </form>
         </div>
+        <div id="chat-history" v-if="showForm">
+            <h2>Chat History</h2>
+            <div class="message" v-for="msg in chatHistory">
+                <p><strong>{{ msg.sender }}:</strong> {{ msg.message }}</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
