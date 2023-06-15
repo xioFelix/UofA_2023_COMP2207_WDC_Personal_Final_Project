@@ -97,4 +97,28 @@ router.post('/getChatHistory', function (req, res, next) {
   });
 });
 
+router.post('/checkIfSeller', function (req, res, next) {
+  req.pool.getConnection(function (err, connection) {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+      return;
+    }
+
+    var query = "SELECT * FROM Sellers WHERE user_id = ?;";
+    var params = [req.body.user_id];
+    connection.query(query, params, function (err, rows, fields) {
+      connection.release();
+
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+        return;
+      }
+
+      res.json(rows); // Return seller info if exists, otherwise return an empty array
+    });
+  });
+});
+
 module.exports = router;
