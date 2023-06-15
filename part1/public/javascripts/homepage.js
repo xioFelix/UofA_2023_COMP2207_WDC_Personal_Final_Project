@@ -6,11 +6,13 @@ var homepage = new Vue({
         message: '',
         user: 'user1',
         seller: '',
+        showForm: false
     },
     methods: {
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
             this.seller = product.seller;
+            this.showForm = true;
         },
         sendMessage: function() {
             fetch('/contactSeller', {
@@ -28,6 +30,7 @@ var homepage = new Vue({
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                this.showForm = false;
             })
             .catch((error) => {
                 console.error('Error:', error);
