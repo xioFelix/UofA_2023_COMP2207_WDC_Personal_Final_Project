@@ -5,7 +5,7 @@
 }
 
 .product-card {
-  flex: 1 0 30%;
+  flex: 1 0 21%;
   /* Adjust this to control how many cards per row */
   margin: 1%;
   /* Add padding, border, etc. as needed */
