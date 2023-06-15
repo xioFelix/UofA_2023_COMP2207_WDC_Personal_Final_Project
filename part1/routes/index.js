@@ -7,7 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/allBooks', function (req, res, next) {
+// ...
+router.get('/allAds', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
       console.error(err);
@@ -15,11 +16,11 @@ router.get('/allBooks', function (req, res, next) {
       return;
     }
 
-    var query = "SELECT * FROM Books;";
-    connection.query(query, function (err1, rows, fields) {
+    var query = "SELECT a.ad_id, a.ISBN, b.title, b.author, b.price, b.image, s.seller_id, s.location, u.user_name FROM Ads a JOIN Books b ON a.ISBN = b.ISBN JOIN Sellers s ON a.seller_id = s.seller_id JOIN Users u ON s.user_id = u.user_id;";
+    connection.query(query, function (err, rows, fields) {
       connection.release();
-      if (err1) {
-        console.error(err1);
+      if (err) {
+        console.error(err);
         res.sendStatus(500);
         return;
       }
@@ -27,6 +28,8 @@ router.get('/allBooks', function (req, res, next) {
     });
   });
 });
+// ...
+
 
 router.post('/contactSeller', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
