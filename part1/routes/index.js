@@ -10,16 +10,15 @@ router.get('/', function(req, res, next) {
 router.get('/allUsers', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      console.error(err);
+      user_id
       res.sendStatus(500);
       return;
     }
-
-    var query = "SELECT Ads.ad_id, Ads.ISBN, Books.title, Books.author, Books.price, Books.image, Sellers.seller_id, Sellers.location, Users.user_name AS seller_name FROM Ads JOIN Books ON Ads.ISBN = Books.ISBN JOIN Sellers ON Ads.seller_id = Sellers.seller_id JOIN Users ON Sellers.user_id = Users.user_id;";
+    var query = "SELECT * from Users;";
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
-        console.error(err);
+        user_id
         res.sendStatus(500);
         return;
       }
@@ -31,7 +30,7 @@ router.get('/allUsers', function (req, res, next) {
 router.get('/allAds', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      console.error(err);
+      user_id
       res.sendStatus(500);
       return;
     }
@@ -40,7 +39,7 @@ router.get('/allAds', function (req, res, next) {
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
-        console.error(err);
+        user_id
         res.sendStatus(500);
         return;
       }
@@ -53,7 +52,7 @@ router.get('/allAds', function (req, res, next) {
 router.post('/contactSeller', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
-      console.error(err);
+      user_id
       res.sendStatus(500);
       return;
     }
@@ -64,7 +63,7 @@ router.post('/contactSeller', function (req, res, next) {
       connection.release();
 
       if (err) {
-        console.error(err);
+        user_id
         res.sendStatus(500);
         return;
       }
