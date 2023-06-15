@@ -65,7 +65,7 @@ CREATE TABLE `Books` (
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `price` decimal(7,2) NOT NULL,
-  `image` varchar(255) DEFAULT `/images/default.png`,
+  `image` varchar(255) DEFAULT ‘/images/default.png’,
   PRIMARY KEY (`ISBN`),
   UNIQUE KEY `ISBN` (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
