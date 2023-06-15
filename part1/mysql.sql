@@ -15,11 +15,11 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Ads (
-    ISBN varchar(255) NOT NULL,
+    ad_id varchar(255) NOT NULL,
     title varchar(255) NOT NULL,
     auther varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
-    PRIMARY KEY (ISBN)
+    PRIMARY KEY (ad_id)
 );
 
 CREATE TABLE Books (
