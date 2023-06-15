@@ -1,9 +1,20 @@
 var homepage = new Vue({
     el: "#products",
     data: {
-        product: []
+        products: []
+    },
+    mounted: function () {
+        fetch('/allBooks')
+            .then(response => response.json())
+            .then(data => {
+                this.products = data;
+            })
+            .catch(err => {
+                console.error('Error:', err);
+            });
     }
 });
+
 
 window.onload = function () {
     var xhttp = new XMLHttpRequest();
