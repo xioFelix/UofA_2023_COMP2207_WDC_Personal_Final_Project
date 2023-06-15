@@ -36,7 +36,7 @@ CREATE TABLE Transitions (
     ISBN varchar(255) NOT NULL,
     sale_date DATE NOT NULL,
     user_id int NOT NULL,
-    sellers_id int NOT NULL,
+    seller_id int NOT NULL,
     PRIMARY KEY (transition_id),
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
