@@ -1,5 +1,5 @@
 var express = require('express');
-const Vue = require('vue');
+var Vue = require('vue');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
