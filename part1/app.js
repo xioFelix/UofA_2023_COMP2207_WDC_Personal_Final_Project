@@ -1,6 +1,6 @@
 var express = require('express');
 var Vue = require('vue');
-var mysql = require('mysql2');
+var mysql2 = require('mysql2');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var pool = mysql.createPool({
+var pool = mysql2.createPool({
     host: 'localhost',
     database: 'marketplace'
 });
