@@ -25,5 +25,12 @@ var pool = mysql.createPool({
     database: 'marketplace'
 });
 
+app.use(function (req, res, next) {
+    req.pool = dbConnectionPool;
+    next();
+});
+app.use(logger('dev'));
+app.use(express.json());
+
 
 module.exports = app;
