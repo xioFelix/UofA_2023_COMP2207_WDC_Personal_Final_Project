@@ -77,10 +77,7 @@ CREATE TABLE `Books` (
 
 LOCK TABLES `Books` WRITE;
 /*!40000 ALTER TABLE `Books` DISABLE KEYS */;
-INSERT INTO `Books` (`ISBN`, `title`, `author`, `price`) VALUES
-('978-3-16-148410-0','Book 1','Author 1',0.99),
-('978-3-16-148410-1','Book 2','Author 2',99.99),
-('978-3-16-148410-2','Book 3','Author 3',50.00);
+INSERT INTO `Books` VALUES ('978-3-16-148410-0','Book 1','Author 1',0.99),('978-3-16-148410-1','Book 2','Author 2',99.99),('978-3-16-148410-2','Book 3','Author 3',50.00);
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
 
