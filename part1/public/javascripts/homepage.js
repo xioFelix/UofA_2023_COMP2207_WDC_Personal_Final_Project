@@ -14,6 +14,7 @@ var homepage = new Vue({
         openContactForm: function(product) {
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
+            this.seller_id = product.seller_nam;
             // Set user_id from the selected user
             this.user_id = this.selectedUser;
             this.showForm = true;
