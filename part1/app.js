@@ -12,7 +12,6 @@ var app = express();
 
 var pool = mysql.createPool({
     host: 'localhost',
-    user: 'root',
     database: 'marketplace'
 });
 
