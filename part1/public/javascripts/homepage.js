@@ -4,8 +4,8 @@ var homepage = new Vue({
         products: [],
         selectedISBN: '',  // 用于保存当前选中的图书ISBN
         message: '',  // 用于保存用户输入的消息
-        buyer: 'Buyer1',  // 硬编码的买家信息
-        seller: '',  // 卖家信息，将从产品数据中获取
+        buyer: 'Buyer1',
+        seller: '',
     },
     methods: {
         openContactForm: function(product) {
