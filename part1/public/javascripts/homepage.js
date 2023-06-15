@@ -8,7 +8,8 @@ var homepage = new Vue({
         user_id: '',
         selectedUser: null,
         seller: '',
-        showForm: false
+        showForm: false,
+        chatHistory: [],
     },
     methods: {
         openContactForm: function(product) {
