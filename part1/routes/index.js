@@ -11,6 +11,7 @@ router.get('/allBooks', function (req, res, next) {
   //Connect to the database
   req.pool.getConnection(function (err, connection) {
     if (err) {
+      console.error(err);
       res.sendStatus(500);
       return;
     }
@@ -19,6 +20,7 @@ router.get('/allBooks', function (req, res, next) {
     connection.query(query, function (rows, fields) {
       connection.release();
       if (err) {
+        console.error(err);
         res.sendStatus(500);
         return;
       }
