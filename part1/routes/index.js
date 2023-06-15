@@ -122,32 +122,32 @@ router.post('/checkIfSeller', function (req, res, next) {
 });
 
 router.post('/getSellerChatHistory', function (req, res, next) {
-  req.pool.getConnection(function (err, connection) {
-    if (err) {
-      console.error(err);
+  req.pool.getConnection(function (connectionError, connection) {
+    if (connectionError) {
+      console.error(connectionError);
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT seller_id FROM Sellers WHERE user_id = ?;";
-    var params = [req.body.seller_id];
-    connection.query(query, params, function (err, result) {
-      if (err) {
-        console.error(err);
+    var query1 = "SELECT seller_id FROM Sellers WHERE user_id = ?;";
+    var params1 = [req.body.seller_id];
+    connection.query(query1, params1, function (queryError, result) {
+      if (queryError) {
+        console.error(queryError);
         res.sendStatus(500);
         return;
       }
       var seller_id = result[0] ? result[0].seller_id : undefined;
       if (seller_id) {
-        var query = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
-        var params = [seller_id];
-        connection.query(query, params, function (err, result) {
+        var query2 = "SELECT Messages.*, Users.user_name AS sender_name FROM Messages LEFT JOIN Users ON Messages.user_id = Users.user_id WHERE Messages.seller_id = ? ORDER BY message_date DESC;";
+        var params2 = [seller_id];
+        connection.query(query2, params2, function (queryError2, result2) {
           connection.release();
-          if (err) {
-            console.error(err);
+          if (queryError2) {
+            console.error(queryError2);
             res.sendStatus(500);
             return;
           }
-          res.json(result);
+          res.json(result2);
         });
       } else {
         res.sendStatus(404);
