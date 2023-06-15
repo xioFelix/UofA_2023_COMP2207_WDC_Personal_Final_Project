@@ -28,14 +28,6 @@ router.get('/allBooks', function (req, res, next) {
   });
 });
 
-router.get('/messages', function(req, res) {
-    // Get all messages for a seller from the database and send them as a response
-});
-
-router.post('/sendMessage', function(req, res) {
-    // Store the new message in the database
-});
-
 router.post('/contactSeller', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
