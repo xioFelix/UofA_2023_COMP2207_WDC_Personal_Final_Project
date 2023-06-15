@@ -15,7 +15,12 @@ router.get('/allAds', function (req, res, next) {
       return;
     }
 
-    var query = "SELECT a.ad_id, a.ISBN, b.title, b.author, b.price, b.image, s.seller_id, s.location, u.user_name FROM Ads a JOIN Books b ON a.ISBN = b.ISBN JOIN Sellers s ON a.seller_id = s.seller_id JOIN Users u ON s.user_id = u.user_id;";
+    var query = "SELECT Ads.ad_id, Ads.ISBN, Books.title, Books.author, Books.price, Books.image, Sellers.seller_id, Sellers.location, Users.user_name AS seller_name
+FROM Ads
+JOIN Books ON Ads.ISBN = Books.ISBN
+JOIN Sellers ON Ads.seller_id = Sellers.seller_id
+JOIN Users ON Sellers.user_id = Users.user_id;
+";
     connection.query(query, function (err, rows, fields) {
       connection.release();
       if (err) {
