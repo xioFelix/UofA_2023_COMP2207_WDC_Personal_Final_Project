@@ -43,8 +43,7 @@ var homepage = new Vue({
                     console.error('Error:', error);
                 });
         },
-    },
-    
+
             sendMessage: function() {
         fetch('/contactSeller', {
             method: 'POST',
