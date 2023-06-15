@@ -21,7 +21,7 @@ var homepage = new Vue({
             this.getChatHistory(); this.checkIfSeller(this.selectedUser); // Check if the selected user is a seller
         },
         // Rest of the code remains the same...
-        checkIfSeller: function (user_id) {
+        checkIfSeller: function(user_id) {
             fetch('/checkIfSeller', {
                 method: 'POST',
                 headers: {
@@ -31,17 +31,17 @@ var homepage = new Vue({
                     user_id: user_id
                 }),
             })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.length === 0) {
-                        console.log('The user is not a seller.');
-                    } else {
-                        console.log('The user is a seller.');
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.length === 0) {
+                    console.log('The user is not a seller.');
+                } else {
+                    console.log('The user is a seller.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         },
     },
             sendMessage: function() {
