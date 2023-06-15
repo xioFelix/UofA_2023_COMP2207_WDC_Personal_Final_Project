@@ -74,7 +74,7 @@ router.post('/contactSeller', function (req, res, next) {
 });
 
 
-router.post('/allUsers', function (req, res, next) {
+router.post('/getChatHistory', function (req, res, next) {
   req.pool.getConnection(function (err, connection) {
     if (err) {
       console.error(err);
