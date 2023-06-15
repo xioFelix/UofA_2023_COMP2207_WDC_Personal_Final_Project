@@ -7,7 +7,7 @@ CREATE TABLE Books (
 );
 
 CREATE TABLE Users (
-    user_id varchar(255) NOT NULL,
+    user_id varchar(255) NOT NULL AUTO_INCREMENT,
     password varchar(255) NOT NULL,
     user_name varchar(255) NOT NULL,
     user_email varchar(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Ads (
-    ad_id int NOT NULL,
+    ad_id int NOT NULL AUTO_INCREMENT,
     ISBN varchar(255) NOT NULL,
     seller_id varchar(255) NOT NULL,
     PRIMARY KEY (ad_id)
