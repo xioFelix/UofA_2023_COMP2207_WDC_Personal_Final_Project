@@ -40,8 +40,8 @@
         <div id="chat-history" v-if="showForm">
     <h2>Chat History</h2>
     <div class="message" v-for="msg in chatHistory">
-        <p><strong>{{ msg.user.user_name }}:</strong> {{ msg.message }}</p>
-        <p><strong>Receiver:</strong> {{ msg.seller.user.user_name }}</p>
+        <p><strong>{{ msg.user_name }}:</strong> {{ msg.message }}</p>
+        <p><strong>Receiver:</strong> {{ msg.user.user_name }}</p>
     </div>
 </div>
 
