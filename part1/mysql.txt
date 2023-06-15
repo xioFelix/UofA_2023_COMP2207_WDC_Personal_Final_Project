@@ -2,6 +2,6 @@ CREATE TABLE Books (
     ISBN varchar(255),
     title varchar(255),
     auther varchar(255),
-    price varchar(255)
+    price varchar(255),
     PRIMARY KEY (ID)
 );
