@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="product-grid" id="products">
-        <div>
+        <div class="selectUser">
             <select v-model="selectedUser">
                 <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
             </select>
