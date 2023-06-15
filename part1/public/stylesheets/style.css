@@ -8,7 +8,8 @@
 .product-card {
   flex: 1 0 21%;
   /* Adjust this to control how many cards per row */
-  margin: 1%;
+  margin: 0.5%;
+  /* Adjust this to reduce space between cards */
   /* Add padding, border, etc. as needed */
 }
 
@@ -23,10 +24,14 @@
 
 .product-card .product-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 70%;
+  top: 15%;
+  /* Adjust this to move the image down */
+  left: 15%;
+  /* Adjust this to move the image to the right */
+  width: 50%;
+  /* Adjust this to reduce the size of the image */
+  height: 50%;
+  /* Adjust this to reduce the size of the image */
   object-fit: cover;
   transition: transform 0.3s ease;
 }
