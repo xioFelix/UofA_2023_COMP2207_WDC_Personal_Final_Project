@@ -111,7 +111,7 @@ var homepage = new Vue({
         },
         imageError: function (event) {
             event.target.src = './images/default.png';
-        },
+        }
     },
     mounted: function () {
         fetch('/allAds')
