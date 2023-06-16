@@ -30,8 +30,7 @@
         <div class="product-grid" id="products">
             <div class="product-card" v-for="product in products" :key="product.ISBN">
                 <div class="image-container">
-                    <!-- Bind the src attribute -->
-                    <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
+                    <img class="product-image" :src="checkImage(product.image)" alt="product image">
                 </div>
                 <div class="booksDiscription">
                     <h2>Title: {{ product.title }}</h2>
