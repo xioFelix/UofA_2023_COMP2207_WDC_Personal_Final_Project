@@ -165,7 +165,7 @@ router.post('/comments/new', function(req, res, next) {
             return;
           }
           var query = `INSERT INTO questions (author,title,content,timestamp,post) VALUES (?,?,?,NOW());`;
-        connection.query(query, [req.body.author.u_id, req.body.title, sanitizeHtml(req.body.content)], function(qerr, rows, fields) {
+          connection.query(query, [req.body.author.u_id,req.body.title,req.body.content,req.body.post_id], function(qerr, rows, fields) {
               if (qerr) {
                   res.sendStatus(500);
                   console.error(qerr);
