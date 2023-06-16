@@ -29,10 +29,9 @@ button:hover {
     background-color: #45a049;
 }
 
-.container {
+.right {
     text-align: right;
 }
-
 
 .product-grid {
   display: flex;
