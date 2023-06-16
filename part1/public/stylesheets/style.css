@@ -39,9 +39,10 @@ button:hover {
 }
 
 .header-content {
-    width: 60%;
-    text-align: center;
-    display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-content h1, .header-content h2 {
