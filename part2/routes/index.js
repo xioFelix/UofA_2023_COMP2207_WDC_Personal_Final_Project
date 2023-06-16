@@ -43,8 +43,6 @@ router.post('/posts/new', function(req, res, next) {
     if(!('user' in req.session)){
       res.sendStatus(401);
       return;
-    } else {
-      console.log(req.session.user);
     }
 
     if("title" in req.body && req.body.title !== null
