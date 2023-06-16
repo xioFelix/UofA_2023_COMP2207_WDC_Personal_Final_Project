@@ -9,6 +9,33 @@ div{
 img{
   border-radius: 5px;
 }
+
+button {
+    /* 添加您想要的样式 */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* 背景色 */
+    border: none; /* 无边框 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 文本居中 */
+    text-decoration: none; /* 无文本装饰 */
+    display: inline-block; /* 以内联块方式显示 */
+    font-size: 16px; /* 字体大小 */
+    margin: 4px 2px; /* 边距 */
+    transition-duration: 0.4s; /* 过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示手指图标 */
+    border-radius: 12px; /* 圆角 */
+}
+
+button:hover {
+    background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+}
+
+/* 使按钮靠右对齐 */
+.container {
+    text-align: right;
+}
+
+
 .product-grid {
   display: flex;
   flex-wrap: wrap;
