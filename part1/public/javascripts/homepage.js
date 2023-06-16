@@ -108,7 +108,10 @@ var homepage = new Vue({
         checkImage: function (imageUrl) {
             if (imageUrl === null || imageUrl === 'undifined' || imageUrl === '') return './images/default.png';
             return imageUrl;
-        }
+        },
+        imageError: function (event) {
+            event.target.src = './images/default.png';
+        },
     },
     mounted: function () {
         fetch('/allAds')
