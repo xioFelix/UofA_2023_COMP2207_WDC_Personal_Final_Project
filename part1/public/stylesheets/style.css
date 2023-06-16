@@ -12,7 +12,8 @@ body{
 .product-card {
   flex: 1 0 21%;
   margin: 0.5%;
-    background-color: rgba(160, 180, 195, 0.2);
+  background-color: rgba(160, 180, 195, 0.2);
+  padding: 5%;
 }
 
 .product-card .image-container {
