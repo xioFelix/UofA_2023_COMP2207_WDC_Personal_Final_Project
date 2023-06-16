@@ -1,37 +1,14 @@
-var header = new Vue({
-    el: "#header-select",
-    data: {
-        users: [],
-        selectedUser: null,
-    },
-    watch: {
-        selectedUser: function (newUserId, oldUserId) {
-            homepage.user_id = newUserId;
-            if (homepage.showForm) {
-                homepage.checkIfSeller(homepage.user_id);
-            }
-        }
-    },
-    mounted: function () {
-        fetch('/allUsers')
-            .then((response) => response.json())
-            .then((data) => {
-                this.users = data;
-            })
-            .catch((err) => {
-                console.error('Error:', err);
-            });
-    }
-});
-
 var homepage = new Vue({
     el: "#products",
     data: {
         products: [],
+        users: [],
         selectedISBN: '',
         message: '',
-        user_id: null,
-        seller: '',
+        selectedUser: null,
+        selectedUserName: '',
+        seller_name: '',
+        seller_id: '',
         showForm: false,
         chatHistory: []
     },
@@ -41,7 +18,7 @@ var homepage = new Vue({
             this.seller_name = product.seller_name;
             this.seller_id = product.seller_id;
             this.showForm = true;
-            this.checkIfSeller(this.user_id);
+            this.checkIfSeller(this.selectedUser);
         },
         checkIfSeller: function (user_id) {
             fetch('/checkIfSeller', {
@@ -76,7 +53,7 @@ var homepage = new Vue({
                 body: JSON.stringify({
                     ISBN: this.selectedISBN,
                     message: this.message,
-                    user_id: this.user_id,
+                    user_id: this.selectedUser,
                     seller_id: this.seller_id
                 }),
             })
@@ -100,7 +77,7 @@ var homepage = new Vue({
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    user_id: this.user_id
+                    user_id: this.selectedUser
                 }),
             })
                 .then((response) => response.json())
@@ -119,7 +96,7 @@ var homepage = new Vue({
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    seller_id: this.user_id
+                    seller_id: this.selectedUser
                 }),
             })
                 .then((response) => response.json())
@@ -132,7 +109,24 @@ var homepage = new Vue({
                 });
         },
     },
+    watch: {
+        selectedUser: function (newUserId, oldUserId) {
+            this.selectedUserName = this.users.find(user => user.user_id === newUserId).user_name;
+            if (this.showForm) {
+                this.checkIfSeller(newUserId);
+            }
+        }
+    },
     mounted: function () {
+        fetch('/allUsers')
+            .then((response) => response.json())
+            .then((data) => {
+                this.users = data;
+            })
+            .catch((err) => {
+                console.error('Error:', err);
+            });
+
         fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
