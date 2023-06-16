@@ -1,5 +1,5 @@
 body{
-  background-color: rgba(160, 180, 190, 0.5);
+  background-color: rgba(160, 180, 190, 0.2);
 }
 
 .product-grid {
@@ -12,6 +12,7 @@ body{
 .product-card {
   flex: 1 0 21%;
   margin: 0.5%;
+    background-color: rgba(160, 180, 190, 0.2);
 }
 
 .product-card .image-container {
