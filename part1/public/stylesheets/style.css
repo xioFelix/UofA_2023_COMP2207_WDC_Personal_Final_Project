@@ -40,8 +40,8 @@ button:hover {
 
 .header-content {
     width: 60%;
-        float: middle;
-    display: none;
+    text-align: center;
+    display: inline-block;
 }
 
 .header-content h1, .header-content h2 {
