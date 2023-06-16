@@ -71,3 +71,49 @@ img{
   overflow-y: auto;
 }
 
+/* 样式化外部div元素 */
+.select-style {
+  width: 200px;
+  height: 35px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* 样式化下拉框元素 */
+.select-style select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  /* 移除默认的Chrome下拉箭头 */
+  -moz-appearance: none;
+  /* 移除默认的Firefox下拉箭头 */
+  appearance: none;
+  /* 移除默认的下拉箭头 */
+}
+
+/* 添加自定义的下拉箭头 */
+.select-style:after {
+  content: "▼";
+  position: relative;
+  top: -28px;
+  right: 10px;
+  padding: 0 0 2px;
+  border-width: 0 2px 2px;
+  border-style: solid;
+  border-color: #999 transparent;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* 当下拉框获得焦点时，改变箭头颜色 */
+.select-style:focus:after {
+  border-color: #555 transparent;
+}
