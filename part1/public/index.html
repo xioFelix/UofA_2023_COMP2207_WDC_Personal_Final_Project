@@ -12,6 +12,10 @@
 
     <body>
         <header>
+            <div class="header-content">
+                <h1>Campus Book Swap</h1>
+                <h2>Your Online Textbook Marketplace</h2>
+            </div>
             <div class="selectUser right" id="header-select">
                 <p>Please choose your identity: </p>
                 <p>(Temporary fix in place, login feature not available yet.)</p>
@@ -20,6 +24,7 @@
                 </select>
             </div>
         </header>
+
         <div class="product-grid" id="products">
             <div class="product-card" v-for="product in products" :key="product.ISBN">
                 <div class="image-container">
