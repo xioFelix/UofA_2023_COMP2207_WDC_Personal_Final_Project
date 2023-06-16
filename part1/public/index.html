@@ -18,7 +18,7 @@
             </div>
             <div class="selectUser right" id="header-select">
                 <p>Please choose your identity: </p>
-                <p>(Temporary fix in place,\n login feature not available yet.)</p>
+                <p>(Temporary fix in place, login feature not available yet.)</p>
                 <select class="select-style" v-model="selectedUser">
                     <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
                 </select>
