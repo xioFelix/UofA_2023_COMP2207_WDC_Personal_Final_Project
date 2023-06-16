@@ -30,7 +30,7 @@
                 <button type="button" id="close-button" @click="showForm = false">X</button>
                 <div class="selectUser">
                     <p>Please choose your identity:</p>
-                    <select v-model="selectedUser">
+                    <select class="select-style" v-model="selectedUser">
                         <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
                     </select>
                 </div>
