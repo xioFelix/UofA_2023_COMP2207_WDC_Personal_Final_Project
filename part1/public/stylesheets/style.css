@@ -141,7 +141,3 @@ footer{
   padding: 20px;
   margin-top: 30px;
 }
-
-footer p::after {
-  padding-left: 5px;
-}
