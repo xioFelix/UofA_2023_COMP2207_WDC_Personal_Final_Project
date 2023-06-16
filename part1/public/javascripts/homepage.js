@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 var homepage = new Vue({
     el: "#products",
@@ -22,11 +23,11 @@ var homepage = new Vue({
             fetch('/checkIfSeller', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     user_id: user_id
-                }),
+                })
             })
                 .then((response) => response.json())
                 .then((data) => {
@@ -46,14 +47,14 @@ var homepage = new Vue({
             fetch('/contactSeller', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     ISBN: this.selectedISBN,
                     message: this.message,
                     user_id: this.user_id,
                     seller_id: this.seller_id
-                }),
+                })
             })
                 .then((response) => response.json())
                 .then((data) => {
@@ -72,11 +73,11 @@ var homepage = new Vue({
             fetch('/getChatHistory', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     user_id: this.user_id
-                }),
+                })
             })
                 .then((response) => response.json())
                 .then((data) => {
@@ -91,11 +92,11 @@ var homepage = new Vue({
             fetch('/getSellerChatHistory', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     seller_id: this.user_id
-                }),
+                })
             })
                 .then((response) => response.json())
                 .then((data) => {
@@ -132,7 +133,7 @@ var header = new Vue({
     el: "#header-select",
     data: {
         users: [],
-        selectedUser: null,
+        selectedUser: null
     },
     watch: {
         selectedUser: function (newUserId, oldUserId) {
