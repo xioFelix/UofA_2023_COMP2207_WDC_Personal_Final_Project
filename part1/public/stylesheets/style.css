@@ -41,7 +41,7 @@ button:hover {
 .header-content {
     width: 60%;
         float: middle;
-    display: block;
+    display: none;
 }
 
 .header-content h1, .header-content h2 {
