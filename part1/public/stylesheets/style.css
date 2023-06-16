@@ -16,14 +16,14 @@ button {
     background-color: #4CAF50; /* 背景色 */
     border: none; /* 无边框 */
     color: white; /* 字体颜色 */
-    text-align: center; /* 文本居中 */
-    text-decoration: none; /* 无文本装饰 */
-    display: inline-block; /* 以内联块方式显示 */
-    font-size: 16px; /* 字体大小 */
-    margin: 4px 2px; /* 边距 */
-    transition-duration: 0.4s; /* 过渡效果 */
-    cursor: pointer; /* 鼠标悬停时显示手指图标 */
-    border-radius: 12px; /* 圆角 */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
 }
 
 button:hover {
