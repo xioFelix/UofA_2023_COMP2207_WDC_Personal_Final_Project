@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <header>
+        <header class="clearfix">
             <div class="header-content">
                 <h1>Campus Book Swap</h1>
                 <h2>Your Online Textbook Marketplace</h2>
@@ -24,6 +24,7 @@
                 </select>
             </div>
         </header>
+
 
         <div class="product-grid" id="products">
             <div class="product-card" v-for="product in products" :key="product.ISBN">
