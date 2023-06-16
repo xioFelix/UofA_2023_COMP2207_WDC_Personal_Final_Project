@@ -131,9 +131,6 @@ var homepage = new Vue({
                     console.error('Error:', error);
                 });
         },
-        checkImage: function (imageUrl) {
-            return imageUrl || './images/default.png';
-        }
     },
     mounted: function () {
         fetch('/allAds')
