@@ -1,12 +1,36 @@
+var header = new Vue({
+    el: "#header-select",
+    data: {
+        users: [],
+        selectedUser: null,
+    },
+    watch: {
+        selectedUser: function (newUserId, oldUserId) {
+            homepage.user_id = newUserId;
+            if (homepage.showForm) {
+                homepage.checkIfSeller(homepage.user_id);
+            }
+        }
+    },
+    mounted: function () {
+        fetch('/allUsers')
+            .then((response) => response.json())
+            .then((data) => {
+                this.users = data;
+            })
+            .catch((err) => {
+                console.error('Error:', err);
+            });
+    }
+});
+
 var homepage = new Vue({
     el: "#products",
     data: {
         products: [],
-        users: [],
         selectedISBN: '',
         message: '',
-        user_id: '',
-        selectedUser: null,
+        user_id: null,
         seller: '',
         showForm: false,
         chatHistory: []
@@ -16,7 +40,6 @@ var homepage = new Vue({
             this.selectedISBN = product.ISBN;
             this.seller_name = product.seller_name;
             this.seller_id = product.seller_id;
-            this.user_id = this.selectedUser;
             this.showForm = true;
             this.checkIfSeller(this.user_id);
         },
@@ -109,24 +132,7 @@ var homepage = new Vue({
                 });
         },
     },
-    watch: {
-        selectedUser: function (newUserId, oldUserId) {
-            this.user_id = newUserId;
-            if (this.showForm) {
-                this.checkIfSeller(this.user_id);
-            }
-        }
-    },
     mounted: function () {
-        fetch('/allUsers')
-            .then((response) => response.json())
-            .then((data) => {
-                this.users = data;
-            })
-            .catch((err) => {
-                console.error('Error:', err);
-            });
-
         fetch('/allAds')
             .then((response) => response.json())
             .then((data) => {
