@@ -21,8 +21,8 @@
                 <h2>{{ product.title }}</h2>
                 <p>{{ product.author }}</p>
                 <span>{{ product.price }}</span>
-                <p>{{ product.location }}</p>
-                <p>Selled{{ product.seller_name }}</p>
+                <p>At: {{ product.location }}</p>
+                <p>Selling by: {{ product.seller_name }}</p>
                 </div>
                 <button type="button" @click="openContactForm(product)">Contact Seller</button>
             </div>
