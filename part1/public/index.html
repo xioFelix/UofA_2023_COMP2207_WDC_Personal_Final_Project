@@ -18,11 +18,11 @@
                     <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
                 </div>
                 <div class="booksDiscription">
-                <h2>Title{{ product.title }}</h2>
+                <h2>Title: {{ product.title }}</h2>
                 <p>Author: {{ product.author }}</p>
                 <span>Price: {{ product.price }}</span>
-                <p>At: {{ product.location }}</p>
                 <p>Selling by: {{ product.seller_name }}</p>
+                <p>At: {{ product.location }}</p>
                 </div>
                 <button type="button" @click="openContactForm(product)">Contact Seller</button>
             </div>
