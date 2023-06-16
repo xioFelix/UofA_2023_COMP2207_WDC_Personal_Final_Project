@@ -24,6 +24,7 @@
                 <p>Selling by: {{ product.seller_name }}</p>
                 <p>At: {{ product.location }}</p>
                 </div>
+                <div class>
                 <button type="button" @click="openContactForm(product)">Contact Seller</button>
             </div>
             <div id="floating-panel" v-if="showForm">
