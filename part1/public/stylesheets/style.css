@@ -23,13 +23,15 @@ body{
   /* padding-right: 10%; */
   position: relative;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-card .product-image {
   position: absolute;
   top: 15%;
-  left: 15%;
-  right: 15%;
+  /* left: 15%;
+  right: 15%; */
   width: 50%;
   height: 50%;
   object-fit: cover;
