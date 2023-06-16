@@ -134,3 +134,10 @@ button:hover {
 .select-style:focus:after {
   border-color: #555 transparent;
 }
+footer{
+  background-color: #282828;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
