@@ -11,6 +11,14 @@
     </head>
 
     <body>
+        <header>
+            <div class="selectUser" id="header-select">
+                <p>Please choose your identity:</p>
+                <select class="select-style" v-model="selectedUser">
+                    <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
+                </select>
+            </div>
+        </header>
         <div class="product-grid" id="products">
             <div class="product-card" v-for="product in products" :key="product.ISBN">
                 <div class="image-container">
@@ -18,24 +26,18 @@
                     <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
                 </div>
                 <div class="booksDiscription">
-                <h2>Title: {{ product.title }}</h2>
-                <p>Author: {{ product.author }}</p>
-                <span>Price: {{ product.price }}</span>
-                <p>Selling by: {{ product.seller_name }}</p>
-                <p>At: {{ product.location }}</p>
+                    <h2>Title: {{ product.title }}</h2>
+                    <p>Author: {{ product.author }}</p>
+                    <span>Price: {{ product.price }}</span>
+                    <p>Selling by: {{ product.seller_name }}</p>
+                    <p>At: {{ product.location }}</p>
                 </div>
                 <div class="right">
-                <button type="button" @click="openContactForm(product)">Contact Seller</button>
+                    <button type="button" @click="openContactForm(product)">Contact Seller</button>
                 </div>
             </div>
             <div id="floating-panel" v-if="showForm">
                 <button type="button" id="close-button" @click="showForm = false">X</button>
-                <div class="selectUser">
-                    <p>Please choose your identity:</p>
-                    <select class="select-style" v-model="selectedUser">
-                        <option v-for="user in users" :value="user.user_id">{{ user.user_name }}</option>
-                    </select>
-                </div>
                 <div id="contact-form">
                     <h2>Contact Seller</h2>
                     <form @submit.prevent="sendMessage">
@@ -54,6 +56,9 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <!-- Add footer content here -->
+        </footer>
     </body>
 
 </html>
