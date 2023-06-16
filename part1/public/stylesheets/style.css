@@ -34,8 +34,24 @@ button:hover {
   background-color: #45a049;
 }
 
+.header-content {
+  width: 60%;
+  text-align: center;
+  display: inline-block;
+}
+
+.header-content h1,
+.header-content h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .right {
-  text-align: right;
+  float: right;
+}
+
+#header-select {
+  width: 30%;
 }
 
 .product-grid {
