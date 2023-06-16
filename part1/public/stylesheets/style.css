@@ -2,10 +2,13 @@ body{
   background-color: rgba(160, 180, 190, 0.2);
 }
 
-div img{
-  border-radius: 5px;
+div{
+  border-radius: 10px;
 }
 
+img{
+  border-radius: 10px;
+}
 .product-grid {
   display: flex;
   flex-wrap: wrap;
