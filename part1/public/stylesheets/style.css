@@ -34,6 +34,10 @@ button:hover {
   background-color: #45a049;
 }
 
+.right {
+  text-align: right;
+}
+
 .header-content {
   width: 60%;
   text-align: center;
@@ -44,10 +48,6 @@ button:hover {
 .header-content h2 {
   margin: 0;
   padding: 0;
-}
-
-.right {
-  float: right;
 }
 
 #header-select {
