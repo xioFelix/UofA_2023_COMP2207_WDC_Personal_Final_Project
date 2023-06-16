@@ -2,8 +2,8 @@ body{
   background-color: rgba(160, 180, 190, 0.2);
 }
 
-div {
-  border-radius: 10px;
+div img{
+  border-radius: 5px;
 }
 
 .product-grid {
