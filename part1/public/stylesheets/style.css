@@ -1,40 +1,41 @@
-body{
+body {
   background-color: rgba(160, 180, 190, 0.2);
 }
 
-header{
-    background-color: #282828;
+header {
+  background-color: rgba(160, 180, 190, 0.2);
+  padding: 1%;
 }
 
-div{
+div {
   border-radius: 15px;
 }
 
-img{
+img {
   border-radius: 5px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 12px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .product-grid {
@@ -77,21 +78,21 @@ button:hover {
 }
 
 #floating-panel {
-    position: fixed;
-    bottom: 0.5%;
-    left: 0.5%;
-    /* width: 20%; */
-    background-color: #fff;
-    border: 1px solid #000;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  position: fixed;
+  bottom: 0.5%;
+  left: 0.5%;
+  /* width: 20%; */
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 #chat-history {
@@ -138,7 +139,8 @@ button:hover {
 .select-style:focus:after {
   border-color: #555 transparent;
 }
-footer{
+
+footer {
   background-color: #282828;
   color: #ffffff;
   text-align: center;
