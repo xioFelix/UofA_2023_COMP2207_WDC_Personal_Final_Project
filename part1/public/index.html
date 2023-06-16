@@ -57,9 +57,17 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <!-- Add footer content here -->
-        </footer>
+<footer style="background-color:#282828; color:#ffffff; text-align:center; padding:20px; margin-top:30px;">
+    <p>© WDC Final</p>
+    <style>
+        footer p::after {
+            content: "\00a9";
+            /* Unicode for © symbol */
+            padding-left: 5px;
+        }
+    </style>
+</footer>
+
     </body>
 
 </html>
