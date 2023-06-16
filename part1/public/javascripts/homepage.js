@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 var homepage = new Vue({
     el: "#products",
     data: {
@@ -110,6 +111,7 @@ var homepage = new Vue({
             return imageUrl;
         },
         imageError: function (event) {
+            // eslint-disable-next-line no-param-reassign
             event.target.src = './images/default.png';
         }
     },
@@ -125,6 +127,7 @@ var homepage = new Vue({
     }
 });
 
+// eslint-disable-next-line no-unused-vars
 var header = new Vue({
     el: "#header-select",
     data: {
