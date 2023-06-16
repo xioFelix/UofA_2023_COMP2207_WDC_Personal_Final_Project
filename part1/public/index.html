@@ -18,9 +18,9 @@
                     <img class="product-image" :src="product.image || './images/default.png'" alt="product image">
                 </div>
                 <div class="booksDiscription">
-                <h2>{{ product.title }}</h2>
-                <p>{{ product.author }}</p>
-                <span>{{ product.price }}</span>
+                <h2>Title{{ product.title }}</h2>
+                <p>Author: {{ product.author }}</p>
+                <span>Price: {{ product.price }}</span>
                 <p>At: {{ product.location }}</p>
                 <p>Selling by: {{ product.seller_name }}</p>
                 </div>
