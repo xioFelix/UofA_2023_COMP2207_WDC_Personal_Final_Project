@@ -14,8 +14,6 @@ body{
   margin: 0.5%;
   background-color: rgba(160, 180, 195, 0.2);
   padding: 3%;
-  justify-content: center;
-  align-items: center;
 }
 
 .product-card .image-container {
