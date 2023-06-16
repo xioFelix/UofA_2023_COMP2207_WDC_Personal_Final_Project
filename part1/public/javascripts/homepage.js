@@ -106,8 +106,7 @@ var homepage = new Vue({
                 });
         },
         checkImage: function (imageUrl) {
-            if (imageUrl === null || imageUrl === 'undifined' || imageUrl === '')
-                return './images/default.png';
+            if (imageUrl === null || imageUrl === 'undifined' || imageUrl === '') return './images/default.png';
         }
     },
     mounted: function () {
